@@ -141,9 +141,11 @@ $( window ).resize(function() {
 // image hover gif play
 $('.poster__4').mouseover(function() {
   var elem = $(this).find("span.trigger");
-  $(this).find("img.replacement").hide();
   var src = elem.attr('data-original');
-  elem.replaceWith('<img class="trigger" src="' + src + '" style="display:block;"/>');
+  var elem2 = $(this).find("img.replacement");
+  var y = elem2.height();
+  elem2.hide();
+  elem.replaceWith('<img class="trigger" src="' + src + '" style="display:block;height:' + y + ';"/>');
 });
 $('.poster__4').mouseout(function() {
   var elem = $(this).find("img.trigger");
